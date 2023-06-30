@@ -46,9 +46,5 @@ X_entrenamiento, X_prueba, y_entrenamiento, y_prueba = train_test_split(X, y, te
 from sklearn.preprocessing import  StandardScaler
 
 escaladorEstandar = StandardScaler()
-X_entrenamiento[:, 3:] = escaladorEstandar.fit_transform(X_entrenamiento[:,3:])
-X_prueba[:,3:] =escaladorEstandar.transform(X_prueba[:,3:])
-
-print(X_entrenamiento)
-print('')
-print(X_prueba)
+X_entrenamiento[:, 3:] = escaladorEstandar.fit_transform(X_entrenamiento[:,3:]) # Esta linea dice que va a recorrer todas las filas, y luego va a recorrer todas las columnas a partir de la 3 [3:] para realizar el escalamiento Estandar de los datos numéricos
+X_prueba[:,3:] =escaladorEstandar.transform(X_prueba[:,3:]) # En esta línea ya los asigna al Tensor
