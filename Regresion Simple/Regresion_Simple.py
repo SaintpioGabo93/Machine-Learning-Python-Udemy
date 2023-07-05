@@ -36,3 +36,23 @@ regresor.fit(X_entrenamiento,y_entrenamiento)
 # Predecir el conjunto de prueba
 
 y_prediccion = regresor.predict(X_prueba)
+
+# Visualizar el resultado del conjunto de entrenamiento
+
+plt.scatter(X_entrenamiento, y_entrenamiento, color = 'red') # Esta grafica en puntos cada un de los datos del conjunto de entrenamiento
+plt.plot(X_entrenamiento, regresor.predict(X_entrenamiento), color = 'blue') # Este muestra la linea resultante de la regresión
+plt.title('Salario vs. Experiencia (Conjunto de entrenamiento)') #Pone título a la gráfica
+plt.xlabel('Años de Experiencia')
+plt.ylabel('Salario')
+
+plt.show()
+
+# Visualización de el conjunto de prueba
+
+plt.scatter(X_prueba, y_prueba, color = 'red')
+plt.plot(X_entrenamiento, regresor.predict(X_entrenamiento), color = 'blue')
+plt.title('Salario vs. Experiencia (Conjunto de prueba)')
+plt.xlabel('Años de Experiencia')
+plt.ylabel('Salario')
+
+plt.show()
